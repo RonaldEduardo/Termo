@@ -1,0 +1,83 @@
+/* Estilo geral para centralizar o formulário e a div dos novos inputs */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  background-color: #3b3b3b;
+  font-family: 'Arial', sans-serif;
+}
+
+button {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  padding: 0px;
+}
+
+button img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 30px;
+}
+
+#titulo {
+  color: #4CAF50;
+}
+
+#formLetras {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.campoLetra {
+  font-size: 50px;
+  margin: 5px 0;
+  padding: 10px;
+  border: 2px solid #8a2be2;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #eee;
+  color: #333;
+  width: 50px;
+  height: 50px;
+
+}
+
+.campoLetraNew {
+  font-size: 50px;
+  margin: 5px 0;
+  padding: 10px;
+  border: 2px solid #8a2be2;
+  border-radius: 5px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+
+}
+
+#novosInputs input {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #8a2be2;
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+
+.campoLetra[style*="green"] {
+  background-color: #4CAF50;
+}
+
+.campoLetra[style*="yellow"] {
+  background-color: #FFEB3B;
+}
+
+.campoLetra[style*="red"] {
+  background-color: #F44336;
+}
