@@ -10,7 +10,8 @@
 
 <body>
   <h1 id="titulo">Termo Do Ronald</h1>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+
   <form id="formLetras">
     <input type="text" class="campoLetra" maxlength="1" required id="campo1">
     <input type="text" class="campoLetra" maxlength="1" required id="campo2">
@@ -20,6 +21,10 @@
   </form>
   <button><img src="reload.png" alt="Reoload" onclick="reload()"></button>
 
+  <div id="meuAlerta" class="alerta-customizado" style="display:none;">
+    <span class="fecharbtn">&times;</span>
+    <strong>Alerta!</strong> Seu número de tentativas esgotou!!!
+  </div>
 
 </body>
 

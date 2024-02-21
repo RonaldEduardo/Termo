@@ -81,3 +81,27 @@ button img {
 .campoLetra[style*="red"] {
   background-color: #F44336;
 }
+
+.alerta-customizado {
+  padding: 20px;
+  background-color: #f44336;
+  /* Vermelho */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* O botão 'fechar' (x) */
+.fecharbtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fecharbtn:hover {
+  color: black;
+}
