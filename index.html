@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Termo 2.0</title>
+</head>
+
+<body>
+  <h1 id="titulo">Termo Do Ronald</h1>
+  <script type="module" src="script.js"></script>
+
+  <form id="formLetras">
+    <input type="text" class="campoLetra" maxlength="1" required id="campo1">
+    <input type="text" class="campoLetra" maxlength="1" required id="campo2">
+    <input type="text" class="campoLetra" maxlength="1" required id="campo3">
+    <input type="text" class="campoLetra" maxlength="1" required id="campo4">
+    <input type="text" class="campoLetra" maxlength="1" required id="campo5">
+  </form>
+  <button><img src="reload.png" alt="Reoload" onclick="reload()"></button>
+
+  <div id="meuAlerta" class="alerta-customizado" style="display:none;">
+    <span class="fecharbtn">&times;</span>
+    <strong>Alerta!</strong> Seu número de tentativas esgotou!!!
+  </div>
+
+</body>
+
+</html>
