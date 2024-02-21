@@ -17,6 +17,15 @@ function termoGame() {
 const termoS = termoGame();
 
 document.addEventListener('DOMContentLoaded', (event) => {
+  let btnReload = document.getElementById('reload')
+
+  function reload() {
+    window.location.reload();
+  }
+
+  btnReload.addEventListener('click', function (event) {
+    reload();
+  });
 
   const inputs = document.querySelectorAll('#formLetras .campoLetra');
 
@@ -55,26 +64,43 @@ function verificarPalavra() {
   const palavra = Array.from(campos).map(campo => campo.value).join('');
   const termoA = termoS.split('');
 
-  // Define as cores baseado na comparação
-  campos.forEach((campo, index) => {
-    if (palavra[index] === termoS[index]) {
-      campo.style.backgroundColor = "green";
-    } else if (termoA.includes(palavra[index])) {
-      campo.style.backgroundColor = "yellow";
-    } else {
-      campo.style.backgroundColor = "red";
+  if (palavras.indexOf(palavra) === -1) {
+    let divEscondida = document.getElementById("meuAlerta");
+    let textoEscondido = document.getElementById('escrita');
+
+    textoEscondido.innerText = "Essa palavra não existe";
+
+    divEscondida.style.backgroundColor = 'blue'
+    divEscondida.style.display = "block";
+
+    function desativar(event) {
+      divEscondida.style.display = "none";
     }
-    campo.style.color = "white";
-  });
 
-  if (palavra !== termoS) {
-    criarNovosInputs(); // Função para criar novos inputs não está definida no snippet original
-    campos.forEach(campo => campo.value = ''); // Limpa os campos para nova tentativa
-  }
+    setTimeout(desativar, 2000);
+  } else {
+    // Define as cores baseado na comparação
+    campos.forEach((campo, index) => {
+      if (palavra[index] === termoA[index]) {
+        campo.style.backgroundColor = "green";
+      } else if (termoA.includes(palavra[index])) {
+        campo.style.backgroundColor = "yellow";
+      } else {
+        campo.style.backgroundColor = "red";
+      }
+      campo.style.color = "white";
+    });
 
-  // Volta o foco para o primeiro campo
-  if (campos.length > 0) {
-    campos[0].focus();
+
+    if (palavra !== termoS) {
+      criarNovosInputs(); // Função para criar novos inputs não está definida no snippet original
+      campos.forEach(campo => campo.value = ''); // Limpa os campos para nova tentativa
+    }
+
+    // Volta o foco para o primeiro campo
+    if (campos.length > 0) {
+      campos[0].focus();
+    }
   }
 }
 
@@ -99,7 +125,12 @@ function criarNovosInputs() {
   console.log(numeroDivs)
 
   if (numeroDivs >= 6) {
-    document.getElementById("meuAlerta").style.display = "block";
+    let divEscondida = document.getElementById("meuAlerta");
+    let textoEscondido = document.getElementById('escrita');
+
+    textoEscondido.innerText = "Seu número de tentativas esgotou!!!";
+    divEscondida.style.backgroundColor = 'red'
+    divEscondida.style.display = "block";
 
     let btnFechar = document.querySelector('.fecharbtn');
 
