@@ -1072,5 +1072,6 @@ export const palavras = [
   'tonto',
   'trono',
   'quilo',
-  'pinto'
+  'pinto',
+  'turne'
 ];
